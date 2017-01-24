@@ -488,9 +488,7 @@ Browserify.prototype._createDeps = function (opts) {
                 }
             }
             if (err) cb(err, file, pkg)
-            else if (file) fs.realpath(file, function (err, res) {
-                cb(err, res, pkg, file);
-            });
+            else if (file) cb(err, file, pkg)
             else cb(err, null, pkg)
         });
     };
